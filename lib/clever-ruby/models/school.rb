@@ -189,9 +189,9 @@ module Clever
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      high_grade_validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "PreKindergarten", "Kindergarten", "PostGraduate", "Other"])
+      high_grade_validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "PreKindergarten", "Kindergarten", "PostGraduate", "Other", "TransitionalKindergarten", "InfantToddler", "Preschool", "Ungraded", ""])
       return false unless high_grade_validator.valid?(@high_grade)
-      low_grade_validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "PreKindergarten", "Kindergarten", "PostGraduate", "Other"])
+      low_grade_validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "PreKindergarten", "Kindergarten", "PostGraduate", "Other", "TransitionalKindergarten", "InfantToddler", "Preschool", "Ungraded", ""])
       return false unless low_grade_validator.valid?(@low_grade)
       return true
     end
@@ -199,7 +199,7 @@ module Clever
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] high_grade Object to be assigned
     def high_grade=(high_grade)
-      validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "PreKindergarten", "Kindergarten", "PostGraduate", "Other"])
+      validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "PreKindergarten", "Kindergarten", "PostGraduate", "Other", "TransitionalKindergarten", "InfantToddler", "Preschool", "Ungraded", ""])
       unless validator.valid?(high_grade)
         fail ArgumentError, "invalid value for 'high_grade', must be one of #{validator.allowable_values}."
       end
@@ -209,7 +209,7 @@ module Clever
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] low_grade Object to be assigned
     def low_grade=(low_grade)
-      validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "PreKindergarten", "Kindergarten", "PostGraduate", "Other"])
+      validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "PreKindergarten", "Kindergarten", "PostGraduate", "Other", "TransitionalKindergarten", "InfantToddler", "Preschool", "Ungraded", ""])
       unless validator.valid?(low_grade)
         fail ArgumentError, "invalid value for 'low_grade', must be one of #{validator.allowable_values}."
       end

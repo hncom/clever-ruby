@@ -267,11 +267,11 @@ module Clever
       return false unless ell_status_validator.valid?(@ell_status)
       gender_validator = EnumAttributeValidator.new('String', ["M", "F", "X", ""])
       return false unless gender_validator.valid?(@gender)
-      grade_validator = EnumAttributeValidator.new('String', ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "PreKindergarten", "Kindergarten", "PostGraduate", "Other", "TransitionalKindergarten", "InfantToddler", "Preschool", "Ungraded"])
+      grade_validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "PreKindergarten", "Kindergarten", "PostGraduate", "Other", "TransitionalKindergarten", "InfantToddler", "Preschool", "Ungraded", ""])
       return false unless grade_validator.valid?(@grade)
       hispanic_ethnicity_validator = EnumAttributeValidator.new('String', ["Y", "N", ""])
       return false unless hispanic_ethnicity_validator.valid?(@hispanic_ethnicity)
-      home_language_validator = EnumAttributeValidator.new('String', ["English", "Albanian", "Amharic", "Arabic", "Bengali", "Bosnian", "Burmese", "Cantonese", "Chinese", "Dutch", "Farsi", "French", "German", "Hebrew", "Hindi", "Hmong", "Ilocano", "Japanese", "Javanese", "Karen", "Khmer", "Korean", "Laotian", "Latvian", "Malay", "Mandarin", "Nepali", "Oromo", "Polish", "Portuguese", "Punjabi", "Romanian", "Russian", "Samoan", "Serbian", "Somali", "Spanish", "Swahili", "Tagalog", "Tamil", "Telugu", "Thai", "Tigrinya", "Turkish", "Ukrainian", "Urdu", "Vietnamese"])
+      home_language_validator = EnumAttributeValidator.new('String', ["English", "Albanian", "Amharic", "Arabic", "Bengali", "Bosnian", "Burmese", "Cantonese", "Chinese", "Dutch", "Farsi", "French", "German", "Hebrew", "Hindi", "Hmong", "Ilocano", "Japanese", "Javanese", "Karen", "Khmer", "Korean", "Laotian", "Latvian", "Malay", "Mandarin", "Nepali", "Oromo", "Polish", "Portuguese", "Punjabi", "Romanian", "Russian", "Samoan", "Serbian", "Somali", "Spanish", "Swahili", "Tagalog", "Tamil", "Telugu", "Thai", "Tigrinya", "Turkish", "Ukrainian", "Urdu", "Vietnamese", ""])
       return false unless home_language_validator.valid?(@home_language)
       race_validator = EnumAttributeValidator.new('String', ["Caucasian", "Asian", "Black or African American", "American Indian", "Hawaiian or Other Pacific Islander", "Two or More Races", "Unknown", ""])
       return false unless race_validator.valid?(@race)
@@ -301,7 +301,7 @@ module Clever
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] grade Object to be assigned
     def grade=(grade)
-      validator = EnumAttributeValidator.new('String', ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "PreKindergarten", "Kindergarten", "PostGraduate", "Other", "TransitionalKindergarten", "InfantToddler", "Preschool", "Ungraded"])
+      validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "PreKindergarten", "Kindergarten", "PostGraduate", "Other", "TransitionalKindergarten", "InfantToddler", "Preschool", "Ungraded", ""])
       unless validator.valid?(grade)
         fail ArgumentError, "invalid value for 'grade', must be one of #{validator.allowable_values}."
       end
@@ -321,7 +321,7 @@ module Clever
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] home_language Object to be assigned
     def home_language=(home_language)
-      validator = EnumAttributeValidator.new('String', ["English", "Albanian", "Amharic", "Arabic", "Bengali", "Bosnian", "Burmese", "Cantonese", "Chinese", "Dutch", "Farsi", "French", "German", "Hebrew", "Hindi", "Hmong", "Ilocano", "Japanese", "Javanese", "Karen", "Khmer", "Korean", "Laotian", "Latvian", "Malay", "Mandarin", "Nepali", "Oromo", "Polish", "Portuguese", "Punjabi", "Romanian", "Russian", "Samoan", "Serbian", "Somali", "Spanish", "Swahili", "Tagalog", "Tamil", "Telugu", "Thai", "Tigrinya", "Turkish", "Ukrainian", "Urdu", "Vietnamese"])
+      validator = EnumAttributeValidator.new('String', ["English", "Albanian", "Amharic", "Arabic", "Bengali", "Bosnian", "Burmese", "Cantonese", "Chinese", "Dutch", "Farsi", "French", "German", "Hebrew", "Hindi", "Hmong", "Ilocano", "Japanese", "Javanese", "Karen", "Khmer", "Korean", "Laotian", "Latvian", "Malay", "Mandarin", "Nepali", "Oromo", "Polish", "Portuguese", "Punjabi", "Romanian", "Russian", "Samoan", "Serbian", "Somali", "Spanish", "Swahili", "Tagalog", "Tamil", "Telugu", "Thai", "Tigrinya", "Turkish", "Ukrainian", "Urdu", "Vietnamese", ""])
       unless validator.valid?(home_language)
         fail ArgumentError, "invalid value for 'home_language', must be one of #{validator.allowable_values}."
       end
