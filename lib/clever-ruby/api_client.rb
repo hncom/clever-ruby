@@ -16,6 +16,7 @@ require 'logger'
 require 'tempfile'
 require 'typhoeus'
 require 'uri'
+require 'clever-ruby/url_helper'
 
 module Clever
   class ApiClient
@@ -289,7 +290,7 @@ module Clever
     def build_request_url(path)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(/\/+/, '/')
-      URI.encode(@config.base_url + path)
+      Clever::UrlHelper.escape(@config.base_url + path)
     end
 
     # Builds the HTTP request body
