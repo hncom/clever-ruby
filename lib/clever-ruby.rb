@@ -11,6 +11,7 @@ Swagger Codegen version: 2.3.0-SNAPSHOT
 =end
 
 # Common files
+require 'clever-ruby/url_helper'
 require 'clever-ruby/api_client'
 require 'clever-ruby/api_error'
 require 'clever-ruby/version'

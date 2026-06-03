@@ -11,6 +11,7 @@ Swagger Codegen version: 2.3.0-SNAPSHOT
 =end
 
 require 'uri'
+require 'clever-ruby/url_helper'
 
 module Clever
   class Configuration
@@ -175,7 +176,7 @@ module Clever
 
     def base_url
       url = "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
-      URI.encode(url)
+      Clever::UrlHelper.escape(url)
     end
 
     # Gets API key (with prefix if set).
